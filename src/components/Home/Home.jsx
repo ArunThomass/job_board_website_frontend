@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../../main";
 import { Navigate } from "react-router-dom";
-
 import JobCategory from "./JobCategory";
-import FeaturedJobs from "./FeaturedJobs";
 import ScrollToTop from "./ScrollToTop";
 import Hero from "./Hero";
 
