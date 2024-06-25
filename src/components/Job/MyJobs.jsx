@@ -16,7 +16,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyjobs",
+          "https://job-board-platform-backend.onrender.com/api/v1/job/getmyjobs",
           { withCredentials: true }
         );
         setMyJobs(data.myJobs);
@@ -42,7 +42,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
+      .put(`https://job-board-platform-backend.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -56,7 +56,7 @@ const MyJobs = () => {
 
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`http://localhost:4000/api/v1/job/delete/${jobId}`, {
+      .delete(`https://job-board-platform-backend.onrender.com/api/v1/job/delete/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -161,17 +161,17 @@ const MyJobs = () => {
                             editingMode !== element._id ? true : false
                           }
                         >
-                          <option value="Graphics & Design">
-                            Graphics & Design
+                          <option value="Human Resource">
+                          Human Resource
                           </option>
-                          <option value="Mobile App Development">
-                            Mobile App Development
+                          <option value="Marketing">
+                          Marketing
                           </option>
-                          <option value="Frontend Web Development">
-                            Frontend Web Development
+                          <option value="Design">
+                          Design
                           </option>
-                          <option value="MERN Stack Development">
-                            MERN STACK Development
+                          <option value="Software Engineer">
+                          Software Engineer
                           </option>
                           <option value="Account & Finance">
                             Account & Finance
@@ -182,14 +182,14 @@ const MyJobs = () => {
                           <option value="Video Animation">
                             Video Animation
                           </option>
-                          <option value="MEAN Stack Development">
-                            MEAN STACK Development
+                          <option value="Automotive Jobs">
+                          Automotive Jobs
                           </option>
-                          <option value="MEVN Stack Development">
-                            MEVN STACK Development
+                          <option value="Coustomer Service">
+                          Coustomer Service
                           </option>
-                          <option value="Data Entry Operator">
-                            Data Entry Operator
+                          <option value="Health and Care">
+                          Health and Care
                           </option>
                         </select>
                       </div>

@@ -12,10 +12,6 @@ const Navbar = () => {
   const handleMenuToggler = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const [darkMode, setDarkMode] = useState (false)
-  const toggleDarkMode =()=>{
-    setDarkMode(!darkMode)
-  }
 
 
   const { isAuthorized, setIsAuthorized, user } = useContext(Context);
@@ -24,7 +20,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        "https://job-board-platform-backend.onrender.com/api/v1/user/logout",
         {
           withCredentials: true,
         }
@@ -37,15 +33,15 @@ const Navbar = () => {
     }
   };
   return (
-    <div className={`${darkMode && "dark"}`}>
-    <header className="  h-[13vh] mx-auto shadow-md dark:bg-neutral-800">
+    
+    <header className="  h-[13vh] mx-auto shadow-md">
       <nav className="flex justify-between mx-auto container items-center py-6 rounded">
         <Link to="/" className=" ">
           <img src="/image/logo1.png" alt="" width={180} height={250} />
         </Link>
         <ul className="hidden md:flex gap-14">
           
-            <li className="text-base text-primary dark:text-neutral-300">
+            <li className="text-base text-primary">
             <Link to={"/"} onClick={() => setShow(false)}>
             Home
             </Link>
@@ -87,22 +83,22 @@ const Navbar = () => {
         </ul>
         <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
           {isAuthorized ? (
-            <>
+           
             <button
               onClick={handleLogout}
               className="py-2 px-5 border rounded bg-blue-950 text-white"
             >
               Logout
             </button>
-            <button onClick={toggleDarkMode} className=" rounded-full py-1 px-2 bg-blue-950 text-white">LT</button>
-            </>
+            
+            
           ) : (
             
             <Link
               to="/login"
               className="py-2 px-5 border rounded bg-blue-950 text-white"
             >
-              Sign in
+              Login
             </Link>
           )}
           
@@ -175,14 +171,14 @@ const Navbar = () => {
               className="hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
-              Sign in
+              Login
             </Link> 
             )}
           </li>
         </ul>
       </div>
     </header>
-    </div>
+    
   );
 };
 

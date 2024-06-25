@@ -11,7 +11,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/v1/job/getall", {
+        .get("https://job-board-platform-backend.onrender.com/api/v1/job/getall", {
           withCredentials: true,
         })
         .then((res) => {
@@ -25,11 +25,13 @@ const Jobs = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <div className='pt-10 pb-12 w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[4rem] gap-[3rem]
+    
+    <div className='  pt-10 pb-12 w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[4rem] gap-[3rem]
         items-center '>
       {jobs.jobs &&
             jobs.jobs.map((element) => {
               return (
+              
     <section className=' overflow-hidden bg-slate-100 p-4 border-2 cursor-pointer hover:scale-110 hover:shadow-sm transition-all duration-300 border-gray-500 rounded-lg border-opacity-10' key={element._id}>
       <div className=' px-6 py-4'>
         <h4 className=' text-primary mb-1'>{element.companyName}</h4>
@@ -48,6 +50,7 @@ const Jobs = () => {
       <Link className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' to={`/job/${element._id}`}>Job Details</Link>
       </div>
     </section>
+    
     );
   })}
     </div>

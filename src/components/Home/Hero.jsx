@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
+  
   return (
-    <div className=" pt-[1rem] pb-[3rem]">
+    <div className=" pt-[1rem] pb-[3rem]  ">
       <div className=" w-[100%] h-[60vh] flex flex-col items-center justify-center">
         <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-[2rem]">
           <div>
@@ -11,11 +12,8 @@ const Hero = () => {
               The <span className=" text-blue-500">Easiest Way</span> <br /> To
               Get Your New Job {""}
             </h1>
-            <p className=" text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum amet,
-              mollitia odit dolorum nostrum debitis. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. In cupiditate dicta odit. Officia,
-              fugit veritatis.
+            <p className=" text-gray-700 mt-3">
+            Your career journey is serious, but should never be lonely or dull. With the new Glassdoor, work communities are right at your fingertips.
             </p>
             <div className="mt-[1.5rem] ">
               <Link

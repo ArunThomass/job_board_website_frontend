@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://job-board-platform-backend.onrender.com/api/v1/user/login",
         { email, password, role },
         {
           headers: {
@@ -46,7 +46,7 @@ const Login = () => {
             <div className="w-full py-16 px-12">
               <h2 className="text-3xl mb-4">Login</h2>
               <p className="mb-4">
-                Create your account. It’s free and only takes a minute.
+              Welcome to your professional community
               </p>
               <form>
                 <div className="gap-5">

@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/register",
+        "https://job-board-platform-backend.onrender.com/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -111,7 +111,7 @@ const Register = () => {
                   to="/login"
                   className="w-full py-3 text-center border rounded-lg bg-blue-950 text-white"
                 >
-                  Sign in
+                  Login
                 </Link>
               </div>
             </form>

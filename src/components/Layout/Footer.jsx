@@ -10,9 +10,7 @@ const Footer = () => {
             hireharbor
           </h1>
           <p className="text-[14px] text-white text-opacity-70">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
-            cumque placeat minus, ex voluptatum rerum. Ex ullam nam nostrum
-            molestiae.
+          Your career journey is serious, but should never be lonely or dull. With the new Glassdoor, work communities are right at your fingertips.
           </p>
           <div className=" mt-[1.5rem] flex items-center space-x-3">
             <div className=" w-[2.4rem] h-[2.4rem] bg-blue-600 rounded-full flex items-center justify-center flex-col">

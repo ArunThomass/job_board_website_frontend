@@ -17,7 +17,7 @@ const MyApplications = () => {
     try {
       if (user && user.role === "Employer") {
         axios
-          .get("http://localhost:4000/api/v1/application/employer/getall", {
+          .get("https://job-board-platform-backend.onrender.com/api/v1/application/employer/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -25,7 +25,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("http://localhost:4000/api/v1/application/jobseeker/getall", {
+          .get("https://job-board-platform-backend.onrender.com/api/v1/application/jobseeker/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -44,7 +44,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:4000/api/v1/application/delete/${id}`, {
+        .delete(`https://job-board-platform-backend.onrender.com/api/v1/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -70,8 +70,8 @@ const MyApplications = () => {
   return (
     <section className="my_applications page">
       {user && user.role === "Job Seeker" ? (
-        <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
-          <h1>My Applications</h1>
+        <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-10 py-8">
+          <h1 className=" text-2xl text-center pb-5">My Applications</h1>
           {applications.length <= 0 ? (
             <>
               {" "}
