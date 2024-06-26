@@ -34,24 +34,24 @@ const Navbar = () => {
   };
   return (
     
-    <header className="  h-[13vh] mx-auto shadow-md">
-      <nav className="flex justify-between mx-auto container items-center py-6 rounded">
+    <header className=" max-w-screen-2xl container max-auto xl:px-24 px-4">
+      <nav className="flex justify-between mx-auto container items-center py-2 md:py-4">
         <Link to="/" className=" ">
           <img src="/image/logo1.png" alt="" width={180} height={250} />
         </Link>
         <ul className="hidden md:flex gap-14">
           
-            <li className="text-base text-primary">
+            <li className="text-base text-blue-900 text-primary">
             <Link to={"/"} onClick={() => setShow(false)}>
             Home
             </Link>
             </li>
-            <li className="text-base text-primary">
+            <li className="text-base text-blue-900 text-primary">
             <Link to={"/job/getall"} onClick={() => setShow(false)}>
             Find Job
             </Link>
             </li>
-            <li className="text-base text-primary">
+            <li className="text-base text-blue-900 text-primary">
             <Link to={"/applications/me"} onClick={() => setShow(false)}>
               {user && user.role === "Employer"
                 ? "Applicant's Application"
@@ -60,7 +60,7 @@ const Navbar = () => {
             </li>
             {user && user.role === "Employer" ? (
               <>
-            <li className="text-base text-primary">
+            <li className="text-base text-blue-900 text-primary">
             <Link to={"/job/me"} onClick={() => setShow(false)}>
                   View your jobs
                 </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <div className={`px-4 bg-blue-900 py-5 rounded-sm ${isMenuOpen ? "" : "hidden"}`}>
+      <div className={`px-4 bg-blue-900 py-5 rounded-sm ${isMenuOpen ? "" : "hidden"} md:hidden`}>
         <ul>
         <li className="text-base text-primary">
             <Link to={"/"} className=" text-white hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>

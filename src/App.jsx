@@ -33,10 +33,11 @@ const App = () => {
         setIsAuthorized(true);
       } catch (error) {
         setIsAuthorized(false);
+        
       }
     };
     fetchUser();
-  }, [isAuthorized]);
+  }, []);
 
   return (
     <>

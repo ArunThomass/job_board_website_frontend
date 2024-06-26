@@ -14,7 +14,7 @@ const Application = () => {
 
   const { isAuthorized, user } = useContext(Context);
 
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
   const handleFileChange = (event) => {
     const resume = event.target.files[0];
     setResume(resume);
@@ -50,7 +50,7 @@ const Application = () => {
       setAddress("");
       setResume("");
       toast.success(data.message);
-      navigateTo("/job/getall");
+      navigate("/job/getall");
     } catch (error) {
       toast.error(error.response.data.message);
     }

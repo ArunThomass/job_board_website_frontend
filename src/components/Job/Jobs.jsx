@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate} from 'react-router-dom';
 import { FiBook, FiClock, FiDollarSign, FiMapPin } from 'react-icons/fi';
 import { Context } from '../../main';
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const { isAuthorized } = useContext(Context);
-  const navigateTo = useNavigate();
   useEffect(() => {
     try {
       axios
