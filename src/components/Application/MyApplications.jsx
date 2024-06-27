@@ -73,10 +73,7 @@ const MyApplications = () => {
         <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-10 py-8">
           <h1 className=" text-2xl text-center pb-5">My Applications</h1>
           {applications.length <= 0 ? (
-            <>
-              {" "}
-              <h4>No Applications Found</h4>{" "}
-            </>
+              <h4>No Applications Found</h4>
           ) : (
             applications.map((element) => {
               return (
