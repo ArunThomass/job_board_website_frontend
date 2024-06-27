@@ -91,9 +91,9 @@ const MyApplications = () => {
         <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
           <h1>Applications From Job Seekers</h1>
           {applications.length <= 0 ? (
-            <>
+            
               <h4>No Applications Found</h4>
-            </>
+            
           ) : (
             applications.map((element) => {
               return (
