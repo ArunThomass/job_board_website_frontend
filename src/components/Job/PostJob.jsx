@@ -101,28 +101,28 @@ const PostJob = () => {
                  className="border border-gray-400 py-1 px-2 mr-7 w-full mb-4 "
               >
                 <option value="">Select Category</option>
-                <option value="Graphics & Design">Graphics & Design</option>
-                <option value="Mobile App Development">
-                  Mobile App Development
+                <option value="Human Resource">Human Resource</option>
+                <option value="Marketing">
+                Marketing
                 </option>
-                <option value="Frontend Web Development">
-                  Frontend Web Development
+                <option value="Design">
+                Design
                 </option>
-                <option value="MERN Stack Development">
-                  MERN STACK Development
+                <option value="Software Engineer">
+                Software Engineer
                 </option>
                 <option value="Account & Finance">Account & Finance</option>
                 <option value="Artificial Intelligence">
                   Artificial Intelligence
                 </option>
                 <option value="Video Animation">Video Animation</option>
-                <option value="MEAN Stack Development">
-                  MEAN STACK Development
+                <option value="Automotive Jobs">
+                Automotive Jobs
                 </option>
-                <option value="MEVN Stack Development">
-                  MEVN STACK Development
+                <option value="Coustomer Service">
+                Coustomer Service
                 </option>
-                <option value="Data Entry Operator">Data Entry Operator</option>
+                <option value="Health and Care">Health and Care</option>
               </select>
             </div>
             <div className="wrapper"> 

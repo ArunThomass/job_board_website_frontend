@@ -89,7 +89,7 @@ const Login = () => {
                 </div>
                 <div className="mt-5 flex flex-col items-center">
                   <Link
-                    to="/register"
+                    to={"/register"}
                     className="w-full py-3 text-center border rounded-lg bg-blue-950 text-white"
                   >
                     Register Now

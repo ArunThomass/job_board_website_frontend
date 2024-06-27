@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6";
+import { Context } from "../../main";
 
 const Footer = () => {
+    const { isAuthorized } = useContext(Context);
+    
+    if (!isAuthorized) {
+        return null;
+    }
   return (
+    <footer>
     <div className="pt-[5rem] pb-[3rem] bg-blue-950 ">
       <div className=" w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[3rem] items-start pb-[2rem] border-b-2 border-white border-opacity-10">
         <div>
@@ -83,6 +90,7 @@ const Footer = () => {
         COPYRIGHT BY ARUN THOMAS - 2024
       </h1>
     </div>
+    </footer>
   );
 };
 

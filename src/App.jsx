@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
+import { BrowserRouter , Route,  Routes } from 'react-router-dom';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 import Jobs from './components/Job/Jobs';
@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <BrowserRouter>
        <Navbar />
         <Routes>
          <Route path="/login" element={<Login />} />
@@ -57,7 +57,7 @@ const App = () => {
         </Routes>
         <Footer />
         <Toaster />
-      </Router>
+      </BrowserRouter>
 
     </>
   );

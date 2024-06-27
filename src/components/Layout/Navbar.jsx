@@ -8,14 +8,12 @@ import { Context } from "../../main";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
+  const navigateTo = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggler = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-
-  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
-  const navigateTo = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -32,6 +30,10 @@ const Navbar = () => {
       toast.error(error.response.data.message), setIsAuthorized(true);
     }
   };
+
+  if (!isAuthorized) {
+    return null;
+}
   return (
     
     <header className=" max-w-screen-2xl container max-auto xl:px-24 px-4">
@@ -81,26 +83,13 @@ const Navbar = () => {
             )}
           
         </ul>
-        <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
-          {isAuthorized ? (
-           
+        <div className="text-base text-primary font-medium space-x-5 hidden lg:block">     
             <button
               onClick={handleLogout}
               className="py-2 px-5 border rounded bg-blue-950 text-white"
             >
               Logout
             </button>
-            
-            
-          ) : (
-            
-            <Link
-              to="/login"
-              className="py-2 px-5 border rounded bg-blue-950 text-white"
-            >
-              Login
-            </Link>
-          )}
           
         </div>
         <div className="md:hidden">
@@ -157,23 +146,12 @@ const Navbar = () => {
               <></>
             )}
           <li className="text-white py-1">
-          {isAuthorized ? (
             <button
               onClick={handleLogout}
               className="hover:text-red-600"
             >
               Logout
-            </button>
-          ) : (
-
-            <Link
-              to="/login"
-              className="hover:text-blue-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Login
-            </Link> 
-            )}
+            </button> 
           </li>
         </ul>
       </div>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Context } from "../../main";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -38,7 +39,7 @@ const Register = () => {
   };
 
   if (isAuthorized) {
-    return <Navigate to="/" />;
+    return <Navigate to={"/"} />;
   }
 
   return (
@@ -50,7 +51,7 @@ const Register = () => {
             <p className="mb-4">
               Create your account. It’s free and only takes a minute.
             </p>
-            <form onSubmit={handleRegister}>
+            <form >
               <div className="gap-5">
                 <select
                   value={role}
@@ -101,6 +102,7 @@ const Register = () => {
               <div className="mt-5">
                 <button
                   type="submit"
+                  onClick={handleRegister}
                   className="w-full border  bg-blue-950 py-3 text-center text-white rounded-lg"
                 >
                   Register Now
@@ -108,7 +110,7 @@ const Register = () => {
               </div>
               <div className="mt-5 flex flex-col items-center">
                 <Link
-                  to="/login"
+                  to={"/login"}
                   className="w-full py-3 text-center border rounded-lg bg-blue-950 text-white"
                 >
                   Login
