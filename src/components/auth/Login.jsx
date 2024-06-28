@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="min-h-screen py-10">
+      <section className="min-h-screen py-10">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row w-8/12 lg:w-4/12 bg-indigo-50 rounded-xl mx-auto shadow-lg overflow-hidden">
             <div className="w-full py-16 px-12">
@@ -99,7 +99,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

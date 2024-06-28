@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Context } from "../../main";
@@ -14,7 +14,7 @@ const Application = () => {
 
   const { isAuthorized, user } = useContext(Context);
 
-  const navigate = useNavigate();
+  const navigateTo = useNavigate();
   const handleFileChange = (event) => {
     const resume = event.target.files[0];
     setResume(resume);
@@ -50,14 +50,14 @@ const Application = () => {
       setAddress("");
       setResume("");
       toast.success(data.message);
-      navigate("/job/getall");
+      navigateTo("/job/getall");
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
   if (!isAuthorized || (user && user.role === "Employer")) {
-    return <Navigate to={"/login"} />;
+    navigateTo("/");
   }
 
   return (

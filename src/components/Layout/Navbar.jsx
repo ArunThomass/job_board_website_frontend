@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
@@ -67,11 +67,11 @@ const Navbar = () => {
                   View your jobs
                 </Link>
             </li>
-            <li>
+            <li className="text-base text-blue-900 text-primary">
             <Link
-              to="/job/post"
-              className="py-2 px-5 border rounded bg-blue-950 text-white"
-            >
+              to={"/job/post"}
+              onClick={() => setShow(false)}>
+            
               Post a job
             </Link>
             </li>

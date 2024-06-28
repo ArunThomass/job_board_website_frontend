@@ -43,6 +43,7 @@ const Register = () => {
   }
 
   return (
+    <>
     <div className="min-h-screen py-10">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row w-6/12 lg:w-4/12 bg-indigo-50 rounded-xl mx-auto shadow-lg overflow-hidden">
@@ -121,6 +122,7 @@ const Register = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

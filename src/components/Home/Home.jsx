@@ -12,14 +12,14 @@ const Home = () => {
   }
 
   return (
-    <>
+    
     <section className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-14">
       <Hero />
       <JobCategory />
       {/* <FeaturedJobs /> */}
       <ScrollToTop />
     </section>
-    </>
+    
   );
 };
 

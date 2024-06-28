@@ -32,8 +32,7 @@ const App = () => {
         setUser(response.data.user);
         setIsAuthorized(true);
       } catch (error) {
-        setIsAuthorized(false);
-        
+        setIsAuthorized(false);   
       }
     };
     fetchUser();
@@ -53,7 +52,7 @@ const App = () => {
           <Route path="/applications/me" element={<MyApplications />} />
           <Route path="/job/post" element={<PostJob />} />
           <Route path="/job/me" element={<MyJobs />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <Toaster />
